@@ -1,6 +1,7 @@
 class env extends uvm_env;
     `uvm_component_utils(env)
 
+    // declare env components
     seqr seqr_h;
     drvr drvr_h;
 

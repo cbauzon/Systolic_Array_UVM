@@ -34,6 +34,23 @@ class drvr extends uvm_driver #(drvr_in);
                 dut_signals_h.i_A = 0;
                 dut_signals_h.i_B = 0;
                 drive_inputs();
+            end else begin
+                for (int i=0; i<3; ++i) begin
+                    dut_signals_h.i_rst_n = 1;
+                    dut_signals_h.i_A = {drvr_in_h.A_mat[i*3+2], drvr_in_h.A_mat[i*3+1], drvr_in_h.A_mat[i*3]};
+                    dut_signals_h.i_B = {drvr_in_h.B_mat[i*3+2], drvr_in_h.B_mat[i*3+1], drvr_in_h.B_mat[i*3]};
+                    drive_inputs();
+                end
+                dut_signals_h.i_A = 0;
+                dut_signals_h.i_B = 0;
+                drive_inputs();
+
+                @(vif.o_C_valid == 1);
+                // for (int i=0; i<9; ++i) begin
+                //     $display("C[%0d]: %d", i+1, vif.o_C[i*16+:16]);
+                // end
+                #20;
+
             end
             seq_item_port.item_done();
         end

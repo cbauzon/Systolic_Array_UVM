@@ -3,8 +3,13 @@
 /*----- TB PKG -----*/
 package tb_pkg;
     import uvm_pkg::*;
-
     
+    `include "msg_items.sv"
+
+    `include "seqr.sv"
+    `include "drvr.sv"
+
+    `include "env.sv"
     `include "test.sv"
 
 endpackage

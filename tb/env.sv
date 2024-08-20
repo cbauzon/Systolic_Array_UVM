@@ -4,6 +4,7 @@ class env extends uvm_env;
     // declare env components
     seqr seqr_h;
     drvr drvr_h;
+    imon imon_h;
 
     function new(string name="env", uvm_component par);
         super.new(name, par);
@@ -14,6 +15,7 @@ class env extends uvm_env;
 
         seqr_h = seqr::type_id::create("seqr_h", this);
         drvr_h = drvr::type_id::create("drvr_h", this);
+        imon_h = imon::type_id::create("imon_h", this);
     endfunction
 
     function void connect_phase(uvm_phase phase);

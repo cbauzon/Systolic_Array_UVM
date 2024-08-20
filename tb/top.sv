@@ -5,7 +5,7 @@ package tb_pkg;
     import uvm_pkg::*;
     
     `include "msg_items.sv"
-
+    `include "seq.sv"
     `include "seqr.sv"
     `include "drvr.sv"
 
@@ -16,8 +16,6 @@ endpackage
 
 /*----- DUT FILES -----*/
 `include "./../rtl/SystolicArray.sv"
-`include "./../rtl/ArrayController.sv"
-`include "./../rtl/InputBuffer.sv"
 `include "./../rtl/MAC.sv"
 
 /*----- INTERFACE DEFINITION -----*/
@@ -32,7 +30,7 @@ module top();
     logic clk;
     initial begin
         clk = 0;
-        forever #10 clk = ~clk;
+        repeat(1000) #10 clk = ~clk;
     end
 
     // interface instantiation
@@ -57,4 +55,8 @@ module top();
         run_test("test");
     end
 
+    initial begin
+        $dumpfile("dump.vcd");
+        $dumpvars();
+    end
 endmodule

@@ -19,8 +19,11 @@ class test extends uvm_test;
     endfunction
 
     task run_phase(uvm_phase phase);
+        seq seq_h;
+        // seq_h = seq::type_id::create("seq_h");
+        seq_h = new();
         phase.raise_objection(this);
-        `uvm_info(get_full_name(), "This is the run phase for test.", UVM_MEDIUM)
+        seq_h.start(env_h.seqr_h);
         phase.drop_objection(this);
     endtask
 endclass

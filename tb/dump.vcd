@@ -1,0 +1,418 @@
+$date
+   Mon Aug 19 20:55:29 2024
+$end
+
+$version
+  2023.2
+  $dumpfile ("dump.vcd") 
+$end
+
+$timescale
+  1ps
+$end
+
+$scope module top $end
+$var reg 1 ! clk $end
+$scope module intf $end
+$var wire 1 " clk $end
+$var reg 1 # i_rst_n $end
+$var reg 24 $ i_A [23:0] $end
+$var reg 24 % i_B [23:0] $end
+$var reg 144 & o_C [143:0] $end
+$var reg 1 ' o_C_valid $end
+$upscope $end
+$scope module dut $end
+$var wire 1 ( i_clk $end
+$var wire 1 ) i_rst_n $end
+$var wire 24 * i_A [23:0] $end
+$var wire 24 + i_B [23:0] $end
+$var reg 144 , o_C [143:0] $end
+$var reg 1 - o_C_valid $end
+$var reg 4 . transaction_cnt [3:0] $end
+$var reg 8 / A11 [7:0] $end
+$var reg 8 0 A21 [7:0] $end
+$var reg 8 1 A31 [7:0] $end
+$var reg 8 2 B11 [7:0] $end
+$var reg 8 3 B12 [7:0] $end
+$var reg 8 4 B13 [7:0] $end
+$var reg 8 5 a11_12 [7:0] $end
+$var reg 8 6 a12_13 [7:0] $end
+$var reg 8 7 a21_22 [7:0] $end
+$var reg 8 8 a22_23 [7:0] $end
+$var reg 8 9 a31_32 [7:0] $end
+$var reg 8 : a32_33 [7:0] $end
+$var reg 8 ; b11_21 [7:0] $end
+$var reg 8 < b21_31 [7:0] $end
+$var reg 8 = b12_22 [7:0] $end
+$var reg 8 > b22_32 [7:0] $end
+$var reg 8 ? b13_23 [7:0] $end
+$var reg 8 @ b23_33 [7:0] $end
+$var reg 8 A a21_buffer [7:0] $end
+$var reg 8 B a31_buffer1 [7:0] $end
+$var reg 8 C a31_buffer2 [7:0] $end
+$var reg 8 D b12_buffer [7:0] $end
+$var reg 8 E b13_buffer1 [7:0] $end
+$var reg 8 F b13_buffer2 [7:0] $end
+$scope module mac11 $end
+$var wire 1 ( i_clk $end
+$var wire 1 ) i_rst_n $end
+$var wire 8 G i_a [7:0] $end
+$var wire 8 H i_b [7:0] $end
+$var reg 8 5 o_x [7:0] $end
+$var reg 8 ; o_y [7:0] $end
+$var reg 16 I o_out [15:0] $end
+$var reg 4 . o_transaction_cnt [3:0] $end
+$var reg 8 J x_d [7:0] $end
+$var reg 8 K y_d [7:0] $end
+$var reg 16 L out_d [15:0] $end
+$upscope $end
+$scope module mac12 $end
+$var wire 1 ( i_clk $end
+$var wire 1 ) i_rst_n $end
+$var wire 8 M i_a [7:0] $end
+$var wire 8 N i_b [7:0] $end
+$var reg 8 6 o_x [7:0] $end
+$var reg 8 = o_y [7:0] $end
+$var reg 16 O o_out [31:16] $end
+$var reg 4 P o_transaction_cnt [3:0] $end
+$var reg 8 Q x_d [7:0] $end
+$var reg 8 R y_d [7:0] $end
+$var reg 16 S out_d [15:0] $end
+$upscope $end
+$scope module mac13 $end
+$var wire 1 ( i_clk $end
+$var wire 1 ) i_rst_n $end
+$var wire 8 T i_a [7:0] $end
+$var wire 8 U i_b [7:0] $end
+$var reg 8 V o_x [7:0] $end
+$var reg 8 ? o_y [7:0] $end
+$var reg 16 W o_out [47:32] $end
+$var reg 4 X o_transaction_cnt [3:0] $end
+$var reg 8 Y x_d [7:0] $end
+$var reg 8 Z y_d [7:0] $end
+$var reg 16 [ out_d [15:0] $end
+$upscope $end
+$scope module mac21 $end
+$var wire 1 ( i_clk $end
+$var wire 1 ) i_rst_n $end
+$var wire 8 \ i_a [7:0] $end
+$var wire 8 ] i_b [7:0] $end
+$var reg 8 7 o_x [7:0] $end
+$var reg 8 < o_y [7:0] $end
+$var reg 16 ^ o_out [63:48] $end
+$var reg 4 _ o_transaction_cnt [3:0] $end
+$var reg 8 ` x_d [7:0] $end
+$var reg 8 a y_d [7:0] $end
+$var reg 16 b out_d [15:0] $end
+$upscope $end
+$scope module mac22 $end
+$var wire 1 ( i_clk $end
+$var wire 1 ) i_rst_n $end
+$var wire 8 c i_a [7:0] $end
+$var wire 8 d i_b [7:0] $end
+$var reg 8 8 o_x [7:0] $end
+$var reg 8 > o_y [7:0] $end
+$var reg 16 e o_out [79:64] $end
+$var reg 4 f o_transaction_cnt [3:0] $end
+$var reg 8 g x_d [7:0] $end
+$var reg 8 h y_d [7:0] $end
+$var reg 16 i out_d [15:0] $end
+$upscope $end
+$scope module mac23 $end
+$var wire 1 ( i_clk $end
+$var wire 1 ) i_rst_n $end
+$var wire 8 j i_a [7:0] $end
+$var wire 8 k i_b [7:0] $end
+$var reg 8 l o_x [7:0] $end
+$var reg 8 @ o_y [7:0] $end
+$var reg 16 m o_out [95:80] $end
+$var reg 4 n o_transaction_cnt [3:0] $end
+$var reg 8 o x_d [7:0] $end
+$var reg 8 p y_d [7:0] $end
+$var reg 16 q out_d [15:0] $end
+$upscope $end
+$scope module mac31 $end
+$var wire 1 ( i_clk $end
+$var wire 1 ) i_rst_n $end
+$var wire 8 r i_a [7:0] $end
+$var wire 8 s i_b [7:0] $end
+$var reg 8 9 o_x [7:0] $end
+$var reg 8 t o_y [7:0] $end
+$var reg 16 u o_out [111:96] $end
+$var reg 4 v o_transaction_cnt [3:0] $end
+$var reg 8 w x_d [7:0] $end
+$var reg 8 x y_d [7:0] $end
+$var reg 16 y out_d [15:0] $end
+$upscope $end
+$scope module mac32 $end
+$var wire 1 ( i_clk $end
+$var wire 1 ) i_rst_n $end
+$var wire 8 z i_a [7:0] $end
+$var wire 8 { i_b [7:0] $end
+$var reg 8 : o_x [7:0] $end
+$var reg 8 | o_y [7:0] $end
+$var reg 16 } o_out [127:112] $end
+$var reg 4 ~ o_transaction_cnt [3:0] $end
+$var reg 8 !! x_d [7:0] $end
+$var reg 8 "! y_d [7:0] $end
+$var reg 16 #! out_d [15:0] $end
+$upscope $end
+$scope module mac33 $end
+$var wire 1 ( i_clk $end
+$var wire 1 ) i_rst_n $end
+$var wire 8 $! i_a [7:0] $end
+$var wire 8 %! i_b [7:0] $end
+$var reg 8 &! o_x [7:0] $end
+$var reg 8 '! o_y [7:0] $end
+$var reg 16 (! o_out [143:128] $end
+$var reg 4 )! o_transaction_cnt [3:0] $end
+$var reg 8 *! x_d [7:0] $end
+$var reg 8 +! y_d [7:0] $end
+$var reg 16 ,! out_d [15:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+
+#0
+$dumpvars
+0!
+bx !!
+0"
+bx "!
+x#
+bx #!
+bx $
+bx $!
+bx %
+bx %!
+bx &
+bx &!
+x'
+bx '!
+0(
+bx (!
+x)
+bx )!
+bx *
+bx *!
+bx +
+bx +!
+bx ,
+bx ,!
+x-
+bx .
+bx /
+bx 0
+bx 1
+bx 2
+bx 3
+bx 4
+bx 5
+bx 6
+bx 7
+bx 8
+bx 9
+bx :
+bx ;
+bx <
+bx =
+bx >
+bx ?
+bx @
+bx A
+bx B
+bx C
+bx D
+bx E
+bx F
+bx G
+bx H
+bx I
+bx J
+bx K
+bx L
+bx M
+bx N
+bx O
+bx P
+bx Q
+bx R
+bx S
+bx T
+bx U
+bx V
+bx W
+bx X
+bx Y
+bx Z
+bx [
+bx \
+bx ]
+bx ^
+bx _
+bx `
+bx a
+bx b
+bx c
+bx d
+bx e
+bx f
+bx g
+bx h
+bx i
+bx j
+bx k
+bx l
+bx m
+bx n
+bx o
+bx p
+bx q
+bx r
+bx s
+bx t
+bx u
+bx v
+bx w
+bx x
+bx y
+bx z
+bx {
+bx |
+bx }
+bx ~
+$end
+
+#10000
+1!
+1"
+1(
+
+#20000
+0!
+0"
+0#
+b0 $
+b0 %
+0(
+0)
+b0 *
+b0 +
+b0 /
+b0 0
+b0 1
+b0 2
+b0 3
+b0 4
+b0 G
+b0 H
+b0 J
+b0 K
+
+#30000
+1!
+b0 !!
+1"
+b0 "!
+b0 #!
+b0 $!
+b0 %!
+b0 &
+b0 &!
+0'
+b0 '!
+1(
+b0 (!
+b0 )!
+b0 *!
+b0 +!
+b0 ,
+b0 ,!
+0-
+b0 .
+b0 5
+b0 6
+b0 7
+b0 8
+b0 9
+b0 :
+b0 ;
+b0 <
+b0 =
+b0 >
+b0 ?
+b0 @
+b0 A
+b0 B
+b0 C
+b0 D
+b0 E
+b0 F
+b0 I
+b0 L
+b0 M
+b0 N
+b0 O
+b0 P
+b0 Q
+b0 R
+b0 S
+b0 T
+b0 U
+b0 V
+b0 W
+b0 X
+b0 Y
+b0 Z
+b0 [
+b0 \
+b0 ]
+b0 ^
+b0 _
+b0 `
+b0 a
+b0 b
+b0 c
+b0 d
+b0 e
+b0 f
+b0 g
+b0 h
+b0 i
+b0 j
+b0 k
+b0 l
+b0 m
+b0 n
+b0 o
+b0 p
+b0 q
+b0 r
+b0 s
+b0 t
+b0 u
+b0 v
+b0 w
+b0 x
+b0 y
+b0 z
+b0 {
+b0 |
+b0 }
+b0 ~
+
+#40000
+0!
+0"
+0(
+
+#50000
+1!
+1"
+1(
+
+#60000
+0!
+0"
+0(

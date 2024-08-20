@@ -12,9 +12,7 @@ class seq extends uvm_sequence #(drvr_in);
         mx = new();
         do_rst(3);
 
-        start_item(mx);
         generate_matrices();
-        finish_item(mx);
 
     endtask
 
@@ -27,10 +25,9 @@ class seq extends uvm_sequence #(drvr_in);
     endtask
 
     task generate_matrices();
+        start_item(mx);
         mx.i_rst_n = 1;
-        foreach (mx.A_mat[i]) begin
-            mx.A_mat[i] = $random();
-            mx.B_mat[i] = $random();
-        end
+        mx.randomize();
+        finish_item(mx);
     endtask
 endclass

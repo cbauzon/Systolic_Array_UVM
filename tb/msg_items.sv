@@ -14,7 +14,7 @@ endclass
 class drvr_in extends uvm_sequence_item;
     logic i_rst_n;
 
-    logic [7:0] A_mat [8:0];
-    logic [7:0] B_mat [8:0];
+    rand logic [7:0] A_mat [8:0];
+    rand logic [7:0] B_mat [8:0];
 
 endclass

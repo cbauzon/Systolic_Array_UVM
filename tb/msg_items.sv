@@ -17,4 +17,6 @@ class spec_signals extends uvm_sequence_item;
     rand logic [7:0] A_mat [8:0];
     rand logic [7:0] B_mat [8:0];
 
+    logic [15:0] C_mat [8:0];
+
 endclass

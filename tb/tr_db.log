@@ -24,3 +24,6 @@
   CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env_h.seqr_h STREAM:576}
   CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env_h.seqr_h STREAM:576}
   CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env_h.seqr_h STREAM:598}
+  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env_h.seqr_h STREAM:598}
+  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env_h.seqr_h STREAM:598}
+  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env_h.seqr_h STREAM:598}

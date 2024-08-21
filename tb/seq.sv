@@ -1,8 +1,8 @@
-class seq extends uvm_sequence #(drvr_in);
+class seq extends uvm_sequence #(spec_signals);
     `uvm_object_utils(seq)
 
     // declare message
-    drvr_in mx;
+    spec_signals mx;
 
     function new(string name="seq");
         super.new(name);

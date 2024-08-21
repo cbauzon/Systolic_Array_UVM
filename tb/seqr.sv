@@ -1,4 +1,4 @@
-class seqr extends uvm_sequencer #(drvr_in);
+class seqr extends uvm_sequencer #(spec_signals);
     `uvm_component_utils(seqr)
     
     function new(string name="seqr", uvm_component par);

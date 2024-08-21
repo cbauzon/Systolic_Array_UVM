@@ -9,6 +9,7 @@ package tb_pkg;
     `include "seqr.sv"
     `include "drvr.sv"
     `include "imon.sv"
+    `include "omon.sv"
 
     `include "env.sv"
     `include "test.sv"

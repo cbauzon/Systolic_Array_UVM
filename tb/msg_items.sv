@@ -11,7 +11,7 @@ class dut_signals extends uvm_sequence_item;
 
 endclass
 
-class drvr_in extends uvm_sequence_item;
+class spec_signals extends uvm_sequence_item;
     logic i_rst_n;
 
     rand logic [7:0] A_mat [8:0];

@@ -1,9 +1,9 @@
-class drvr extends uvm_driver #(drvr_in);
+class drvr extends uvm_driver #(spec_signals);
     `uvm_component_utils(drvr)
     
     // declare messages
     dut_signals dut_signals_h;
-    drvr_in drvr_in_h;
+    spec_signals spec_signals_h;
 
     // declare vif
     virtual dut_intf vif;
@@ -24,12 +24,12 @@ class drvr extends uvm_driver #(drvr_in);
     endfunction 
 
     task run_phase(uvm_phase phase);
-        drvr_in_h = new();
+        spec_signals_h = new();
         dut_signals_h = new();
         forever begin
-            seq_item_port.get_next_item(drvr_in_h);
-            `uvm_info(get_full_name(), "Got msg from seqr!", UVM_MEDIUM)
-            if (!drvr_in_h.i_rst_n) begin
+            seq_item_port.get_next_item(spec_signals_h);
+            //`uvm_info(get_full_name(), "Got msg from seqr!", UVM_MEDIUM)
+            if (!spec_signals_h.i_rst_n) begin
                 dut_signals_h.i_rst_n = 0;
                 dut_signals_h.i_A = 0;
                 dut_signals_h.i_B = 0;
@@ -37,8 +37,8 @@ class drvr extends uvm_driver #(drvr_in);
             end else begin
                 for (int i=0; i<3; ++i) begin
                     dut_signals_h.i_rst_n = 1;
-                    dut_signals_h.i_A = {drvr_in_h.A_mat[i*3+2], drvr_in_h.A_mat[i*3+1], drvr_in_h.A_mat[i*3]};
-                    dut_signals_h.i_B = {drvr_in_h.B_mat[i*3+2], drvr_in_h.B_mat[i*3+1], drvr_in_h.B_mat[i*3]};
+                    dut_signals_h.i_A = {spec_signals_h.A_mat[i*3+2], spec_signals_h.A_mat[i*3+1], spec_signals_h.A_mat[i*3]};
+                    dut_signals_h.i_B = {spec_signals_h.B_mat[i*3+2], spec_signals_h.B_mat[i*3+1], spec_signals_h.B_mat[i*3]};
                     drive_inputs();
                 end
                 dut_signals_h.i_A = 0;

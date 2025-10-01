@@ -10,7 +10,7 @@ package tb_pkg;
     `include "drvr.sv"
     `include "imon.sv"
     `include "omon.sv"
-
+    `include "agent.sv"
     `include "env.sv"
     `include "test.sv"
 

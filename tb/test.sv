@@ -23,7 +23,7 @@ class test extends uvm_test;
         // seq_h = seq::type_id::create("seq_h");
         seq_h = new();
         phase.raise_objection(this);
-        seq_h.start(env_h.seqr_h);
+        seq_h.start(env_h.agent_h.seqr_h);
         phase.drop_objection(this);
     endtask
 endclass

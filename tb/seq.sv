@@ -14,6 +14,8 @@ class seq extends uvm_sequence #(spec_signals);
 
         generate_matrices();
 
+        do_rst(3);
+
     endtask
 
     task do_rst(int num_reps);

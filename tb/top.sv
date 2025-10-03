@@ -1,9 +1,9 @@
 `include "uvm_macros.svh" 
 
 /*----- TB PKG -----*/
+
 package tb_pkg;
     import uvm_pkg::*;
-    
     `include "msg_items.sv"
     `include "seq.sv"
     `include "seqr.sv"

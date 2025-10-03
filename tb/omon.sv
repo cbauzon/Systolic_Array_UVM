@@ -32,10 +32,11 @@ class omon extends uvm_monitor;
             @(vif.o_C_valid)
             if (prev_val !== 'x) begin
                 `uvm_info(get_full_name, "Got a change at the output!", UVM_MEDIUM);
-
+                
                 for (int i=0; i<9; ++i) begin
                     mx.C_mat[i] = vif.o_C[i*16+:16];
                 end
+                mx.print_res();
                 omon_port.write(mx);
 
             end else begin

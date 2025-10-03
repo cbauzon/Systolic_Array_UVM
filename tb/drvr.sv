@@ -24,9 +24,9 @@ class drvr extends uvm_driver #(spec_signals);
     endfunction 
 
     task run_phase(uvm_phase phase);
-        spec_signals_h = new();
-        dut_signals_h = new();
         forever begin
+            spec_signals_h = new();
+            dut_signals_h = new();
             seq_item_port.get_next_item(spec_signals_h);
             //`uvm_info(get_full_name(), "Got msg from seqr!", UVM_MEDIUM)
             if (!spec_signals_h.i_rst_n) begin

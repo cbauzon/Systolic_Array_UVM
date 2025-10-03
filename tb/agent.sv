@@ -12,14 +12,19 @@ endfunction
 
 function void build_phase(uvm_phase phase);
   super.build_phase(phase);
-  drvr_h = drvr::type_id::create("drvr_h", this);
-  seqr_h = seqr::type_id::create("seqr_h", this);
-  imon_h = imon::type_id::create("imong_h", this);
+  if (get_is_active()) begin
+    `uvm_info("AGENT", "agent is active!!!", UVM_MEDIUM)
+    drvr_h = drvr::type_id::create("drvr_h", this);
+    seqr_h = seqr::type_id::create("seqr_h", this);
+  end
+  imon_h = imon::type_id::create("imon_h", this);
   omon_h = omon::type_id::create("omon_h", this);
 endfunction 
 
 function void connect_phase(uvm_phase phase);
-  drvr_h.seq_item_port.connect(seqr_h.seq_item_export);
+  if (get_is_active()) begin
+    drvr_h.seq_item_port.connect(seqr_h.seq_item_export);
+  end 
 endfunction
 
 

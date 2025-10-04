@@ -48,7 +48,7 @@ always_comb begin
     out_d = i_a*i_b + o_out;
 end
 
-always @(posedge i_clk) begin
+always @(posedge i_clk, negedge i_rst_n) begin
     if (!i_rst_n) begin
         o_transaction_cnt <= 0;
         o_x <= 0;

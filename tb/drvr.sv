@@ -23,11 +23,19 @@ class drvr extends uvm_driver #(spec_signals);
         end
     endfunction 
 
+    task inits();
+        vif.i_A = 0;
+        vif.i_B = 0;
+        vif.i_rst_n = 0;
+    endtask
+
     task run_phase(uvm_phase phase);
+        inits();
         forever begin
             spec_signals_h = new();
             dut_signals_h = new();
             seq_item_port.get_next_item(spec_signals_h);
+            `uvm_info("DRVR", "Got an item!!", UVM_MEDIUM);
             if (!spec_signals_h.i_rst_n) begin
                 dut_signals_h.i_rst_n = 0;
                 dut_signals_h.i_A = 0;

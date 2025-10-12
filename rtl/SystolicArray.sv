@@ -23,6 +23,7 @@
 module SystolicArray(
 input logic i_clk,
 input logic i_rst_n,
+input logic i_push,
 input logic [23:0] i_A,
 input logic [23:0] i_B,
 
@@ -42,13 +43,15 @@ logic [7:0] B12;
 logic [7:0] B13;
 
 always_comb begin
-    A11 = i_A[7:0];
-    A21 = i_A[15:8];
-    A31 = i_A[23:16]; 
+    if (i_push) begin
+        A11 = i_A[7:0];
+        A21 = i_A[15:8];
+        A31 = i_A[23:16]; 
 
-    B11 = i_B[7:0];
-    B12 = i_B[15:8];
-    B13 = i_B[23:16]; 
+        B11 = i_B[7:0];
+        B12 = i_B[15:8];
+        B13 = i_B[23:16]; 
+    end
 end
 
 // signals in between the array

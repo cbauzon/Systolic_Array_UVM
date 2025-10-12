@@ -53,11 +53,10 @@ class drvr extends uvm_driver #(spec_signals);
                 dut_signals_h.i_B = 0;
                 drive_inputs();
 
-                @(vif.o_C_valid == 1);
+                @(posedge vif.o_C_valid);
                 // for (int i=0; i<9; ++i) begin
                 //     $display("C[%0d]: %d", i+1, vif.o_C[i*16+:16]);
                 // end
-                #20;
 
             end
             seq_item_port.item_done();

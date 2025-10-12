@@ -2,9 +2,8 @@ class imon extends uvm_monitor;
     `uvm_component_utils(imon)
 
     // declare messages
-    uvm_analysis_port #(dut_signals) imon_port;
-    dut_signals mx;
-
+    uvm_analysis_port #(spec_signals) imon_port;
+    spec_signals mx;
     // create vif
     virtual dut_intf vif;
 
@@ -26,28 +25,24 @@ class imon extends uvm_monitor;
 
     endfunction
 
-    logic [23:0] prev_val_A = 'x;
-    logic [23:0] prev_val_B = 'x;
     task run_phase(uvm_phase phase);
+        @(posedge vif.i_rst_n)
         forever begin
             mx = new();
 
-            // check for when the values are uninitialized
             @(vif.i_A, vif.i_B)
-            if (prev_val_A !== 'x && prev_val_B !== 'x) begin
-                mx.i_A = vif.i_A;
-                mx.i_B = vif.i_B;
-                `uvm_info(get_full_name, $sformatf("Got a change at the input!"), UVM_MEDIUM)
-                imon_port.write(mx);
-            end else begin
-                prev_val_A = vif.i_A;
-                prev_val_B = vif.i_B;
-            end
+            `uvm_info("IMON", "got a change on the input!!", UVM_MEDIUM)
             
-
-
         end
-    endtask 
+
+    endtask
+
+    /*task build_matrices();
+        for (int i=0; i<3; i++) begin
+            mx.A_mat[count+i*3] = vif.i_A[i*8+:8];
+            mx.B_mat[count+i] = vif.i_B[i*8+:8];
+        end
+    endtask*/
 
 
 

@@ -12,6 +12,7 @@ package tb_pkg;
     `include "omon.sv"
     `include "agent.sv"
     `include "comp.sv"
+    `include "ref_model.sv"
     `include "env.sv"
     `include "test.sv"
 

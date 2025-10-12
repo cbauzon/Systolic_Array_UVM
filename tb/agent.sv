@@ -1,6 +1,4 @@
-class agent extends uvm_agent;
-`uvm_component_utils(agent)
-
+class agent extends uvm_agent; `uvm_component_utils(agent)
 drvr drvr_h;
 seqr seqr_h;
 imon imon_h;
@@ -22,6 +20,7 @@ function void build_phase(uvm_phase phase);
 endfunction 
 
 function void connect_phase(uvm_phase phase);
+    super.connect_phase(phase);
     if (get_is_active()) begin
         drvr_h.seq_item_port.connect(seqr_h.seq_item_export);
     end 
